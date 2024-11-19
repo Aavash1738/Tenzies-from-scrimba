@@ -13,13 +13,13 @@ main {
   background-color: #f5f5f5;
   height: 400px;
   max-width: 800px;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 0px auto;
+  margin: 15px auto;
 }
 
 .title {
@@ -54,20 +54,32 @@ main {
 
 .top-lane {
   display: grid;
-  grid-template: ;
+  grid-template: 1fr / 1.2fr 3fr 1.2fr;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   width: 95%;
+}
+
+.current,
+.best {
+  background-color: #5035ff;
+  padding: 10px 0px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
 }
 
 .die-num {
   font-size: 2rem;
 }
 
-.roll-dice {
+.roll-dice,
+.restart {
   height: 50px;
   width: 150px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: #5035ff;
   color: white;
   font-size: 1.2rem;
@@ -75,10 +87,25 @@ main {
   cursor: pointer;
 }
 
+.roll-dice:hover {
+  background-color: #29c467;
+}
+
+.restart {
+  height: 50px;
+  width: 100px;
+  margin-top: 1rem;
+}
+
+.restart:hover {
+  background-color: #ff3550;
+}
+
 .roll-dice:focus {
   outline: none;
 }
 
-.roll-dice:active {
+.roll-dice:active,
+.restart:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
