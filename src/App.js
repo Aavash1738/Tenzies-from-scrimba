@@ -25,8 +25,10 @@ export default function App() {
   }, [dice, bestVal, numOfRolls]);
 
   function generateNewDie() {
+    let rand = Math.ceil(Math.random() * 6);
     return {
-      value: Math.ceil(Math.random() * 6),
+      value: rand,
+      image: `dice-six-faces-${rand}.svg`,
       isHeld: false,
       id: nanoid(),
     };
@@ -66,6 +68,7 @@ export default function App() {
   const diceElements = dice.map((die) => (
     <Die
       key={die.id}
+      image={die.image}
       value={die.value}
       isHeld={die.isHeld}
       holdDice={() => holdDice(die.id)}
