@@ -18,11 +18,11 @@ export default function App() {
     const allSameValue = dice.every((die) => die.value === firstValue);
     if (allHeld && allSameValue) {
       setTenzies(true);
-      if (bestVal == 0 || numOfRolls < bestVal) {
+      if (bestVal === 0 || numOfRolls < bestVal) {
         localStorage.setItem("Best", numOfRolls);
       }
     }
-  }, [dice]);
+  }, [dice, bestVal, numOfRolls]);
 
   function generateNewDie() {
     return {
